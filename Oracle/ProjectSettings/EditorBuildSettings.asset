@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Colin.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Marissa.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 8691774043835bb45a9d1c4e8214d371
   - enabled: 1
     path: Assets/Scenes/GameStart.unity
     guid: d65dea3f38258454096c72141b8d7606
+  - enabled: 1
+    path: Assets/Scenes/Dominic.unity
+    guid: 681fb3fbc7a350c43943c7467ca54115
   m_configObjects: {}
