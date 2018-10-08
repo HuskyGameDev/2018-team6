@@ -14,8 +14,8 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		TimerText.text = ("Time Spent on Level: " + (int)timer);
+		TimerText.text = ("Time Spent on Level: " + (int)timer + " Seconds");
 	}
 
-	
+
 }
