@@ -13,18 +13,14 @@
 	void Update () {
 
 		//uses the p button to pause and unpause the game
-		if(Input.GetKeyDown(KeyCode.Escape))
-		{
-			if(Time.timeScale == 1)
+	
+		
+			if(Time.timeScale == 0)
 			{
-				Time.timeScale = 0;
-				
-			} else if (Time.timeScale == 0){
-				Debug.Log ("high");
 				Time.timeScale = 1;
 				
-			}
-		}
+			} 
+		
 	}
 
 
@@ -39,7 +35,7 @@
 			{
 				Time.timeScale = 0;
 			
-			} else if (Time.timeScale == 0){
+			} else {
 				Time.timeScale = 1;
 			
 			}
