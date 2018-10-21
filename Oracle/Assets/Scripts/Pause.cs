@@ -12,7 +12,7 @@
 	// Update is called once per frame
 	void Update () {
 
-		//uses the p button to pause and unpause the game
+		//unpause
 	
 		
 			if(Time.timeScale == 0)

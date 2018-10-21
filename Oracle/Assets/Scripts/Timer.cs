@@ -8,12 +8,15 @@ public class Timer : MonoBehaviour {
 	float timer = 0;
 	// Use this for initialization
 	void Start () {
+		//timer will alwwawys start at 0
 		timer = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//update time by seconds
 		timer += Time.deltaTime;
+		//display
 		TimerText.text = ("Time Spent on Level: " + (int)timer + " Seconds");
 	}
 
