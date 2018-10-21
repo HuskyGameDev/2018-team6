@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemiesMovement : MonoBehaviour
 {
 
-    float speed = 1;
+    float speed = 0.001f;
     GameObject player = new GameObject();
     private Rigidbody rb;
 
@@ -33,9 +33,44 @@ public class EnemiesMovement : MonoBehaviour
 
             float moveSpeed = (speed * Time.deltaTime);
 
-            transform.position = transform.position + (delta * moveSpeed);
-            transform.SetPositionAndRotation(delta * moveSpeed /*Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z)*/, new Quaternion());
+            Vector3 xDifference = new Vector3(0,0,0);
+            Vector3 yDifference = new Vector3(0, 0, 0);
+            Vector3 finalVector = new Vector3(0, 0, 0);
 
+            if (transform.position.x - player.transform.position.x == 0)
+            {
+                xDifference = new Vector3(0,0,0);
+            }
+
+            if (transform.position.x - player.transform.position.x > 0)
+            {
+                xDifference = new Vector3(-0.5f, 0, 0);
+            }
+
+            if (transform.position.x - player.transform.position.x < 0)
+            {
+                xDifference = new Vector3(0.5f, 0, 0);
+            }
+
+            if (transform.position.y - player.transform.position.y == 0)
+            {
+                yDifference = new Vector3(0, 0, 0);
+            }
+
+            if (transform.position.y - player.transform.position.y > 0)
+            {
+                yDifference = new Vector3(0, -0.5f, 0);
+            }
+
+            if (transform.position.y - player.transform.position.y < 0)
+            {
+                yDifference = new Vector3(0, 0.5f, 0);
+            }
+
+            finalVector = xDifference + yDifference;
+
+            transform.position = transform.position + finalVector;
+            //transform.SetPositionAndRotation(delta * moveSpeed /*Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z)*/, new Quaternion());
         }
         else
         {
