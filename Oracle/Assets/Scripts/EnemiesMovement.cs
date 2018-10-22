@@ -52,17 +52,17 @@ public class EnemiesMovement : MonoBehaviour
                 xDifference = new Vector3(0.5f, 0, 0);
             }
 
-            if (transform.position.y - player.transform.position.y == 0)                              //if enemy y - player y = 0
+            if (transform.position.z - player.transform.position.z == 0)                              //if enemy y - player y = 0
             {
                 yDifference = new Vector3(0, 0, 0);
             }
 
-            if (transform.position.y - player.transform.position.y > 0)                              //if enemy y - player y > 0
+            if (transform.position.z - player.transform.position.z > 0)                              //if enemy y - player y > 0
             {
                 yDifference = new Vector3(0, -0.5f, 0);
             }
 
-            if (transform.position.y - player.transform.position.y < 0)                              //if enemy y - player y < 0
+            if (transform.position.z - player.transform.position.z < 0)                              //if enemy y - player y < 0
             {
                 yDifference = new Vector3(0, 0.5f, 0);
             }
