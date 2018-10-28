@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemiesMovement : MonoBehaviour
 {
 
-    float speed = 0.001f;
-    GameObject player = new GameObject();
+    public float speed = 0.001f;
+    public GameObject player;// = new GameObject();
     private Rigidbody rb;
 
     void Start()
@@ -35,8 +35,9 @@ public class EnemiesMovement : MonoBehaviour
 
             Vector3 xDifference = new Vector3(0,0,0);
             Vector3 yDifference = new Vector3(0, 0, 0);
-            Vector3 finalVector = new Vector3(0, 0, 0);
-
+            Vector3 zDifference = new Vector3(0, 0, 0);
+            Vector3 finalVector = new Vector3(0, 0, 0); 
+            
             if (transform.position.x - player.transform.position.x == 0)
             {
                 xDifference = new Vector3(0,0,0);
@@ -44,12 +45,12 @@ public class EnemiesMovement : MonoBehaviour
 
             if (transform.position.x - player.transform.position.x > 0)
             {
-                xDifference = new Vector3(-0.5f, 0, 0);
+                xDifference = new Vector3(-speed, 0, 0);
             }
 
             if (transform.position.x - player.transform.position.x < 0)
             {
-                xDifference = new Vector3(0.5f, 0, 0);
+                xDifference = new Vector3(speed, 0, 0);
             }
 
             if (transform.position.y - player.transform.position.y == 0)
@@ -59,15 +60,30 @@ public class EnemiesMovement : MonoBehaviour
 
             if (transform.position.y - player.transform.position.y > 0)
             {
-                yDifference = new Vector3(0, -0.5f, 0);
+                yDifference = new Vector3(0, -speed, 0);
             }
 
             if (transform.position.y - player.transform.position.y < 0)
             {
-                yDifference = new Vector3(0, 0.5f, 0);
+                yDifference = new Vector3(0, speed, 0);
             }
 
-            finalVector = xDifference + yDifference;
+            if (transform.position.z - player.transform.position.z == 0)
+            {
+                zDifference = new Vector3(0, 0, 0);
+            }
+
+            if (transform.position.z - player.transform.position.z > 0)
+            {
+                zDifference = new Vector3(0, 0, -speed);
+            }
+
+            if (transform.position.z - player.transform.position.z < 0)
+            {
+                zDifference = new Vector3(0, 0, speed);
+            }
+
+            finalVector = xDifference + yDifference + zDifference;
 
             transform.position = transform.position + finalVector;
             //transform.SetPositionAndRotation(delta * moveSpeed /*Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z)*/, new Quaternion());
