@@ -7,11 +7,11 @@ public class GameHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         HealthSystem healthSystem = new HealthSystem(100);
-        Debug.Log("Health: " + healthSystem.GetHealth());
-        healthSystem.Damage(10);
-        Debug.Log("Health: " + healthSystem.GetHealth());
-        healthSystem.Heal(10);
-        Debug.Log("Health: " + healthSystem.GetHealth());
+        Debug.Log("Health: " + healthSystem.getHealth());
+        healthSystem.damage(10);
+        Debug.Log("Health: " + healthSystem.getHealth());
+        healthSystem.heal(10);
+        Debug.Log("Health: " + healthSystem.getHealth());
 
     }
 

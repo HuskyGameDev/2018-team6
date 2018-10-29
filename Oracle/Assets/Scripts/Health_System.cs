@@ -5,24 +5,34 @@ using UnityEngine;
 public class HealthSystem  {
 
     private int health;
+    private int healthMax;
 
-    public HealthSystem(int health)
+    public HealthSystem(int healthMax)
     {
-        this.health = health;
+        this.healthMax = healthMax;
+        health = healthMax;
     }
 
-    public int GetHealth()
+    public int getHealth()
     {
         return health;
     }
 	
-    public void Damage(int damageAmount)
+    public void damage(int damageAmount)
     {
         health -= damageAmount;
+        if(health < 0)
+        {
+            health = 0;
+        }
     }
-    public void Heal(int healAmount)
+    public void heal(int healAmount)
     {
         health += healAmount;
+        if(health > healthMax)
+        {
+            health = healthMax;
+        }
     }
 
 
