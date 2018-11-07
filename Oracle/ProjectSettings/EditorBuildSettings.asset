@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dominic.unity
     guid: 681fb3fbc7a350c43943c7467ca54115
+  - enabled: 1
+    path: Assets/Scenes/Upgrade.unity
+    guid: cd0e5179c737e4d62b58d42af155ecfd
   m_configObjects: {}

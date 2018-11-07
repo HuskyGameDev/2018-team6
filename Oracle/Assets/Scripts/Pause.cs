@@ -24,10 +24,6 @@
 	}
 
 
-	//Reloads the Level
-	public void Reload(){
-		Application.LoadLevel(Application.loadedLevel);
-	}
 
 	//controls the pausing of the scene
 	public void pauseControl(){
