@@ -49,6 +49,7 @@ public class Timer : MonoBehaviour {
 	void Score() {
 		if ( i == 0) {
 		 score = ((5 * 60) - timer) * 10;
+		 PlayerPrefs.SetInt("Score", (int) score);
 		 ScoreText.text = ("Total score: " + (int) score + " Points");
 		 Time.timeScale = 0;
 		 Game.SetActive(false);
