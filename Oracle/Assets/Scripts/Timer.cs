@@ -6,6 +6,7 @@ using System.Threading;
 public class Timer : MonoBehaviour {
 	public Text TimerText;
 	public Text ScoreText;
+	public Text RoundScore;
 	public GameObject Game;
 	public GameObject complete;
 	public GameObject  pauseButton;
@@ -49,8 +50,11 @@ public class Timer : MonoBehaviour {
 	void Score() {
 		if ( i == 0) {
 		 score = ((5 * 60) - timer) * 10;
-		 PlayerPrefs.SetInt("Score", (int) score);
-		 ScoreText.text = ("Total score: " + (int) score + " Points");
+		 int total = (int)score + PlayerPrefs.GetInt("Score");
+		 PlayerPrefs.SetInt("Score", (int) total);
+		 PlayerPrefs.SetInt("Round Score", (int)score);
+		 ScoreText.text = ("Total score: " + (int) total + " Points");
+		 RoundScore.text = ("Round Score: " + (int)score + " Points");
 		 Time.timeScale = 0;
 		 Game.SetActive(false);
 		 i++;
