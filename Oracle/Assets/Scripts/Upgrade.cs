@@ -45,11 +45,11 @@ public class Upgrade : MonoBehaviour {
 	public void setDamage(int d) {
 		//calculate and update damage for tower whose upgrade button was clicked
 		towerName =  EventSystem.current.currentSelectedGameObject.name;
-		damage = PlayerPrefs.GetInt(name);
+		damage = PlayerPrefs.GetInt(towerName);
 		if ( score > 0) {
 			//towerName =  EventSystem.current.currentSelectedGameObject.name;
 			damage = damage + d;
-			PlayerPrefs.SetInt(name, damage);
+			PlayerPrefs.SetInt(towerName, damage);
 		} else {
 			score = score + points;
 		}
