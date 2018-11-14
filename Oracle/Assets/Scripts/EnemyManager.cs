@@ -6,30 +6,44 @@ public class EnemyManager : MonoBehaviour
 {
     public HealthSystem playerHealth;       // Reference to the player's heatlh.
     public GameObject enemy;                // The enemy prefab to be spawned.
-    public float spawnTime = 3f;            // How long between each spawn.
+    public float spawnStart = 3f;           // How long before enemies start to spawn.
+    public float spawnTime = 3f;            // How long between enemy spawns
     public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
-
+    public const int enemyCap = 30;         // Max amount of enemies allowed on the screen at any given time.
+    private int enemyCounter = 0;           // The amount of enemies on the screen at any given time.
 
     void Start()
     {
-        // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
-        InvokeRepeating("Spawn", spawnTime, spawnTime);
+        // Call the Spawn function after a delay of the spawnStart and then continue to call after the spawnTime amount of time.
+        InvokeRepeating("Spawn", spawnStart, spawnTime);
     }
 
 
     void Spawn()
     {
         // If the player has no health left...
-        // if (playerHealth.getHealth() <= 0f)
-        // {
+        /* if (playerHealth.getHealth() <= 0f)
+        {
             // ... exit the function.
-            // return;
-        // }
+            return;
+        } */
+
+        // If there are 30 or more enemies on the screen...
+        if (enemyCounter >= enemyCap)
+        {
+            // ... exit the function.
+            return;
+        }
 
         // Find a random index between zero and one less than the number of spawn points.
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
         // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
         Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+
+        // increment the counter by one
+        enemyCounter++;
     }
+
+    // need to add something to allow us to decrement the enemyCounter when an enemy dies.
 }
