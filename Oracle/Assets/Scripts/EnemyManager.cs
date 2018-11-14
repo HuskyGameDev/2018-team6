@@ -9,8 +9,10 @@ public class EnemyManager : MonoBehaviour
     public float spawnStart = 3f;           // How long before enemies start to spawn.
     public float spawnTime = 3f;            // How long between enemy spawns
     public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
-    public const int enemyCap = 30;         // Max amount of enemies allowed on the screen at any given time.
-    private int enemyCounter = 0;           // The amount of enemies on the screen at any given time.
+    public const int enemyCap = 30;         // Max amount of enemies allowed on-screen.
+    public int enemyCounter = 0;            // The current amount of enemies on-screen.
+    public float timer = 0f;                // The amount of time that has passed since the start of the level.
+    public const float endTime = 120f;      // The time denoting the end of the round.
 
     void Start()
     {
@@ -28,8 +30,8 @@ public class EnemyManager : MonoBehaviour
             return;
         } */
 
-        // If there are 30 or more enemies on the screen...
-        if (enemyCounter >= enemyCap)
+        // If there are 30 or more enemies on the screen or timer is greater than the endTime...
+        if (enemyCounter >= enemyCap || timer > endTime)
         {
             // ... exit the function.
             return;
