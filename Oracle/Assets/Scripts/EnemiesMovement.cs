@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemiesMovement : MonoBehaviour
 {
 
-    public float speed = 0.001f; //initialize speed
+    public float speed = 0.005f; //initialize speed
     public GameObject player; //declare player GameObject
     private Rigidbody rb; //declare ridgebody
 
@@ -16,7 +16,6 @@ public class EnemiesMovement : MonoBehaviour
 
         if (!player) //if player object does not exist
             Debug.Log("ERROR could not find Player!"); 
-
     }
 
     void Update()
