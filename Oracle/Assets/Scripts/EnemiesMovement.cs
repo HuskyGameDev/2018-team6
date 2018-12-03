@@ -99,7 +99,7 @@ public class EnemiesMovement : MonoBehaviour
         //}
     }
 
-    /*public int health; //declares health 
+    public int health; //declares health 
     public int healthMax; //declares max health
 
     //gets the health of the player
@@ -126,5 +126,5 @@ public class EnemiesMovement : MonoBehaviour
         {
             health = healthMax;
         }
-    }*/
+    }
 }
