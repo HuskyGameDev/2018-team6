@@ -545,6 +545,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.01
   player: {fileID: 1061846181}
+  health: 0
+  healthMax: 0
 --- !u!65 &546008908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1148,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21e9f69d17c42b4aafb053f42b0c4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
+  range: 5
   myLayerMask:
     serializedVersion: 2
     m_Bits: 534
@@ -1498,7 +1500,7 @@ Prefab:
     - target: {fileID: 114773101935868004, guid: 7014764b1f1055542a42e5d111734579,
         type: 2}
       propertyPath: testing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114773101935868004, guid: 7014764b1f1055542a42e5d111734579,
         type: 2}
