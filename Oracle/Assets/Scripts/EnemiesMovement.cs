@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemiesMovement : MonoBehaviour
 {
 
-    public float speed = 0.005f; //initialize speed
+    public float speed = 0.001f; //initialize speed
     public GameObject player; //declare player GameObject
     private Rigidbody rb; //declare ridgebody
 
@@ -82,7 +82,7 @@ public class EnemiesMovement : MonoBehaviour
                 zDifference = new Vector3(0, 0, speed);
             }
 
-            finalVector = xDifference + yDifference + zDifference;
+            finalVector = xDifference + yDifference + zDifference; //sets final vector to combination of differences
 
             transform.position = transform.position + finalVector;
             //transform.SetPositionAndRotation(delta * moveSpeed /*Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z)*/, new Quaternion());
@@ -91,5 +91,11 @@ public class EnemiesMovement : MonoBehaviour
         {
             Debug.Log("not close yet " + distance);
         }
+         
+        //if distance if less than 10, attack 
+        //if (distance < 10)
+        //{
+        //    animation.Play("attack");
+        //}
     }
 }
