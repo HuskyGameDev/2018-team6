@@ -93,10 +93,10 @@ public class EnemiesMovement : MonoBehaviour
         }
 
         //if the distance is less than 10 
-        //if (distance < 10)
-        //{
-        //    damage(10);
-        //}
+        if (distance < 10)
+        {
+            damage(10);
+        }
     }
 
     public int health; //declares health 
