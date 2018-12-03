@@ -15,7 +15,7 @@ public class EnemiesMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>(); //initialize player
 
         if (!player) //if player object does not exist
-            Debug.Log("ERROR could not find Player!"); 
+            Debug.Log("ERROR could not find Player!");
     }
 
     void Update()
@@ -32,14 +32,13 @@ public class EnemiesMovement : MonoBehaviour
 
             float moveSpeed = (speed * Time.deltaTime); //sets the speed of the movement
 
-            Vector3 xDifference = new Vector3(0,0,0); //initializes xDifference 
+            Vector3 xDifference = new Vector3(0, 0, 0); //initializes xDifference 
             Vector3 yDifference = new Vector3(0, 0, 0); //initializes yDifference
-            Vector3 zDifference = new Vector3(0, 0, 0); //initializes zDifference
             Vector3 finalVector = new Vector3(0, 0, 0); //initializes finalVector
 
             if (transform.position.x - player.transform.position.x == 0) //if the x difference between player and enemy is 0, set position
             {
-                xDifference = new Vector3(0,0,0);
+                xDifference = new Vector3(0, 0, 0);
             }
 
             if (transform.position.x - player.transform.position.x > 0) //if the x difference between player and enemy is > 0, set position
@@ -67,22 +66,7 @@ public class EnemiesMovement : MonoBehaviour
                 yDifference = new Vector3(0, speed, 0);
             }
 
-            if (transform.position.z - player.transform.position.z == 0) //if the z difference between player and enemy is 0, set position
-            {
-                zDifference = new Vector3(0, 0, 0);
-            }
-
-            if (transform.position.z - player.transform.position.z > 0) //if the z difference between player and enemy is > 0, set position
-            {
-                zDifference = new Vector3(0, 0, -speed);
-            }
-
-            if (transform.position.z - player.transform.position.z < 0) //if the z difference between player and enemy is < 0, set position
-            {
-                zDifference = new Vector3(0, 0, speed);
-            }
-
-            finalVector = xDifference + yDifference + zDifference; //sets final vector to combination of differences
+            finalVector = xDifference + yDifference; //sets final vector to combination of differences
 
             transform.position = transform.position + finalVector;
             //transform.SetPositionAndRotation(delta * moveSpeed /*Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z)*/, new Quaternion());
@@ -91,11 +75,11 @@ public class EnemiesMovement : MonoBehaviour
         {
             Debug.Log("not close yet " + distance);
         }
-         
+
         //if distance if less than 10, attack 
-        //if (distance < 10)
-        //{
-        //    animation.Play("attack");
-        //}
+        if (distance < 10)
+        {
+            //int health = HealthSystem get
+        }
     }
 }
