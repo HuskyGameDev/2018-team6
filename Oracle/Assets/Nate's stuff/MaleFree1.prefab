@@ -410,7 +410,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4422079144694432}
-  - component: {fileID: 114980957363086540}
   - component: {fileID: 54118119730051758}
   - component: {fileID: 65057913570665896}
   - component: {fileID: 114730610668117930}
@@ -1217,19 +1216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da34931017f425459540938ffdd1b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114980957363086540
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707118966323370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc1a2d0390143e4789f68fed603b5a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.001
-  player: {fileID: 0}
 --- !u!137 &137295895573914744
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
