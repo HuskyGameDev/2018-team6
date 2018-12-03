@@ -73,9 +73,16 @@ public class EnemiesMovement : MonoBehaviour
             }
 
             if (transform.position.z - player.transform.position.z > 0) //if the z difference between player and enemy is > 0, set position
+            {
+                zDifference = new Vector3(0, 0, -speed);
+            }
 
+            if (transform.position.z - player.transform.position.z < 0) //if the z difference between player and enemy is < 0, set position
+            {
+                zDifference = new Vector3(0, 0, speed);
+            }
 
-                finalVector = xDifference + yDifference + zDifference; //sets final vector to combination of differences
+            finalVector = xDifference + yDifference + zDifference; //sets final vector to combination of differences
 
             transform.position = transform.position + finalVector;
             //transform.SetPositionAndRotation(delta * moveSpeed /*Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z)*/, new Quaternion());
