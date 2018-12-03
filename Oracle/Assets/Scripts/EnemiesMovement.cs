@@ -86,20 +86,22 @@ public class EnemiesMovement : MonoBehaviour
         }
 
         //if the distance is less than 10 
-        if (distance < 10)
-        {
-            damage(10);
-        }
+        //if (distance < 10)
+        //{
+        //    damage(10);
+        //}
     }
 
-    public int health;
-    public int healthMax;
+    /*public int health; //declares health 
+    public int healthMax; //declares max health
 
+    //gets the health of the player
     public int getHealth()
     {
         return health;
     }
 
+    //function to do damage on health 
     public void damage(int damageAmount)
     {
         health -= damageAmount;
@@ -108,6 +110,8 @@ public class EnemiesMovement : MonoBehaviour
             health = 0;
         }
     }
+
+    //function to increase health/heal the player
     public void heal(int healAmount)
     {
         health += healAmount;
@@ -115,5 +119,5 @@ public class EnemiesMovement : MonoBehaviour
         {
             health = healthMax;
         }
-    }
+    }*/
 }

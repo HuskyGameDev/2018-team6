@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HealthSystem  {
 
-    private int health;
-    private int healthMax;
+    public int health;
+    public int healthMax;
 
     public HealthSystem(int healthMax)
     {
