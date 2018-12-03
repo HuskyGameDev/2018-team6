@@ -24,6 +24,7 @@ public class MeleeManager : MonoBehaviour {
 		
 	}
 
+    // method that attacks and broadcasts the hit
     void Attack()
     {
         RaycastHit hit;
