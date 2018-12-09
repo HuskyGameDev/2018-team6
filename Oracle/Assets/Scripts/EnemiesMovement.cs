@@ -92,10 +92,11 @@ public class EnemiesMovement : MonoBehaviour
             Debug.Log("not close yet " + distance);
         }
 
-        //if the distance is less than 10 
+        //if the distance is less than 10, lead to losing page
         if (distance < 10)
         {
-            damage(10);
+            LoadSceneOnClick sn = gameObject.GetComponent<LoadSceneOnClick>();
+            sn.LoadScene("load");
         }
     }
 
