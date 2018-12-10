@@ -73,9 +73,16 @@ public class EnemiesMovement : MonoBehaviour
             }
 
             if (transform.position.z - player.transform.position.z > 0) //if the z difference between player and enemy is > 0, set position
+            {
+                zDifference = new Vector3(0, 0, -speed);
+            }
 
+            if (transform.position.z - player.transform.position.z < 0) //if the z difference between player and enemy is < 0, set position
+            {
+                zDifference = new Vector3(0, 0, speed);
+            }
 
-                finalVector = xDifference + yDifference + zDifference; //sets final vector to combination of differences
+            finalVector = xDifference + yDifference + zDifference; //sets final vector to combination of differences
 
             transform.position = transform.position + finalVector;
             //transform.SetPositionAndRotation(delta * moveSpeed /*Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z)*/, new Quaternion());
@@ -85,21 +92,24 @@ public class EnemiesMovement : MonoBehaviour
             Debug.Log("not close yet " + distance);
         }
 
-        //if the distance is less than 10 
+        //if the distance is less than 10, lead to losing page
         if (distance < 10)
         {
-            damage(10);
+            LoadSceneOnClick sn = gameObject.GetComponent<LoadSceneOnClick>();
+            sn.LoadScene("load");
         }
     }
 
-    public int health;
-    public int healthMax;
+    public int health; //declares health 
+    public int healthMax; //declares max health
 
+    //gets the health of the player
     public int getHealth()
     {
         return health;
     }
 
+    //function to do damage on health 
     public void damage(int damageAmount)
     {
         health -= damageAmount;
@@ -108,6 +118,8 @@ public class EnemiesMovement : MonoBehaviour
             health = 0;
         }
     }
+
+    //function to increase health/heal the player
     public void heal(int healAmount)
     {
         health += healAmount;
