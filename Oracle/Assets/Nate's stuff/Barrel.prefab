@@ -97,7 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.005
-  player: {fileID: 1707118966323370, guid: fda29a02cb1929346ae2c71a97dc11ec, type: 2}
+  player: {fileID: 1783208865409466, guid: ec87c227ba81afc459fe6f5113fde5d2, type: 2}
+  health: 0
+  healthMax: 0
 --- !u!136 &136631131741481682
 CapsuleCollider:
   m_ObjectHideFlags: 1
