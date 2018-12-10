@@ -10,6 +10,7 @@ public class Player_Movement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+    // allows use of arrow keys to move the player
 	void Update () {
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;

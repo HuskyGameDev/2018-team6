@@ -62,7 +62,9 @@ public class EnemiesMovement : MonoBehaviour
             {
                 zDifference = new Vector3(0, 0, speed);
             }
+
             finalVector = xDifference + yDifference + zDifference; //sets final vector to combination of differences
+
             transform.position = transform.position + finalVector;
             //transform.SetPositionAndRotation(delta * moveSpeed /*Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z)*/, new Quaternion());
         }
@@ -77,8 +79,10 @@ public class EnemiesMovement : MonoBehaviour
             sn.LoadScene("load");
         }
     }
+
     public int health; //declares health 
     public int healthMax; //declares max health
+
     //gets the health of the player
     public int getHealth()
     {

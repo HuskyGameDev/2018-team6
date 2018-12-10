@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HealthSystem  {
 
-    private int health;
-    private int healthMax;
+    public int health;
+    public int healthMax;
 
     public HealthSystem(int healthMax)
     {
@@ -13,11 +13,13 @@ public class HealthSystem  {
         health = healthMax;
     }
 
+    //gets the current level of health
     public int getHealth()
     {
         return health;
     }
 	
+    // deals damage to the subject 
     public void damage(int damageAmount)
     {
         health -= damageAmount;
@@ -26,6 +28,8 @@ public class HealthSystem  {
             health = 0;
         }
     }
+
+    // heals the subject
     public void heal(int healAmount)
     {
         health += healAmount;
