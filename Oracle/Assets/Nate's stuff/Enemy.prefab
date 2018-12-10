@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4369747900436674}
   - component: {fileID: 212764411840617726}
+  - component: {fileID: 114407385481578800}
+  - component: {fileID: 65105800597470470}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -40,6 +42,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &65105800597470470
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096363102944690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000002, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114407385481578800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096363102944690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc1a2d0390143e4789f68fed603b5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.005
+  player: {fileID: 1783208865409466, guid: ec87c227ba81afc459fe6f5113fde5d2, type: 2}
+  health: 0
+  healthMax: 0
 --- !u!212 &212764411840617726
 SpriteRenderer:
   m_ObjectHideFlags: 1
