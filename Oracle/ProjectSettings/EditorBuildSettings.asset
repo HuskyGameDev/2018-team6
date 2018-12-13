@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Upgrade.unity
     guid: cd0e5179c737e4d62b58d42af155ecfd
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: 1536e90e7b2c51d40a294787ba6fe3d4
   m_configObjects: {}

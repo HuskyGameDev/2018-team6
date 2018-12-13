@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class EnemiesMovement : MonoBehaviour
 {
     public float speed = 0.001f; //initialize speed
@@ -19,7 +21,7 @@ public class EnemiesMovement : MonoBehaviour
         var distance = Vector3.Distance(player.transform.position, transform.position); //initializes distance to the distance between the player and the enemy
         if (distance < 60)  //if the distance between enemy and player is less than 60
         {
-            Debug.Log("player is close");
+            Debug.Log("player is close" + distance);
             Vector3 delta = player.transform.position - transform.position; //initializes vector to the the distance between the enemy and player
             float moveSpeed = (speed * Time.deltaTime); //sets the speed of the movement
             Vector3 xDifference = new Vector3(0, 0, 0); //initializes xDifference 
@@ -72,11 +74,13 @@ public class EnemiesMovement : MonoBehaviour
         {
             Debug.Log("not close yet " + distance);
         }
+
         //if the distance is less than 10, lead to losing page
-        if (distance < 10)
+        if (distance < .5 && Time.timeScale != 0)
         {
-            LoadSceneOnClick sn = gameObject.GetComponent<LoadSceneOnClick>();
-            sn.LoadScene("load");
+            //LoadSceneOnClick sn = gameObject.GetComponent<LoadSceneOnClick>();
+           //load.LoadScene("MainMenu");
+           SceneManager.LoadScene("Lose");
         }
     }
 

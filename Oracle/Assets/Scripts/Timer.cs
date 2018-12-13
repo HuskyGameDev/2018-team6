@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour {
 	public GameObject Game;
 	public GameObject complete;
 	public GameObject  pauseButton;
+
 	//set to true to test score and load the next level, otherwise will run scene as normal
 	public bool testing;
 
@@ -29,7 +30,7 @@ public class Timer : MonoBehaviour {
 	void Update () {
 		//update time by seconds
 		if ( i == 0) {
-		if ( timer > 3 && testing) {
+		if ( timer > 20 && testing) {
 			Score();
 			 Time.timeScale = 0;
 			 //disable game/game UI and enable level complete and score screen
